@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Layout with Welcome and Background Music</title>
+    <style>
+        /* Container for the entire layout */
+        .page-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+
+        /* Left and right columns for side images */
+        .side-images {
+            display: grid;
+            grid-template-columns: repeat(5, 80px);
+            grid-template-rows: repeat(6, auto);
+            gap: 10px;
+            margin: 0 20px;
+        }
+
+        /* Central image container */
+        .central-image {
+            width: 430px;
+            height: 570px;
+            position: relative;
+            margin: 0 20px;
+        }
+
+        /* Styling for the central welcome image */
+        .central-image img {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        /* Text overlay on the central image */
+        .text-overlay {
+            position: absolute;
+            top: 57%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgb(172, 115, 115);
+            font-size: 40px;
+            padding: 10px;
+            text-align: center;
+            animation: fadeIn 2s infinite;
+            z-index: 2;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Side image styling */
+        .side-images img {
+            width: 80px;
+            height: auto;
+            animation: beat 1.5s infinite ease-in-out;
+        }
+
+        /* Animation for beating hearts */
+        @keyframes beat {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Hidden image styling */
+        #newImage {
+            position: absolute;
+            top: 59.5%;
+            left: 48.5%;
+            transform: translate(-50%, -50%);
+            width: 290px;
+            height: 228px;
+            display: none;
+            z-index: 2;
+        }
+
+        /* Text below the welcome image */
+        #text-overlay1 {
+            position: absolute;
+            top: 57%;
+            left: 50%;
+            color: rgb(172, 115, 115);
+            font-size: 30px;
+            padding: 10px;
+            text-align: center;
+            margin-top: 150px;
+            z-index: 2;
+        }
+
+        /* Button styling */
+        .music-controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Styling for next button */
+        #nextButton {
+            color: grey;
+            background-color: pink;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 30px;
+            border: none;
+            width: 100px;
+            margin-left: 150px;
+            margin-top: -5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-container">
+        <!-- Left side images -->
+        <div class="side-images">
+            <img src="photos/side4.jpeg" alt="Side Image 1">
+            <img src="photos/heart.jpeg" alt="Heart Image">
+            <img src="photos/side4.jpeg" alt="Side Image 1">
+            <img src="photos/heart.jpeg" alt="Heart Image">
+            <img src="photos/side4.jpeg" alt="Heart Image">
+            <img src="photos/heart.jpeg" alt="Side Image 1">
+            <img src="photos/side4.jpeg" alt="Heart Image">
+            <img src="photos/heart.jpeg" alt="Side Image 1">
+            <img src="photos/side4.jpeg" alt="Side Image 1">
+            <img src="photos/heart.jpeg" alt="Heart Image">
+            <img src="photos/side4.jpeg" alt="Side Image 1">
+            <img src="photos/heart.jpeg" alt="Heart Image">
+            <img src="photos/side4.jpeg" alt="Side Image 1">
+            <img src="photos/heart.jpeg" alt="Heart Image">
+            <img src="photos/side4.jpeg" alt="Heart Image">
+            <img src="photos/heart.jpeg" alt="Side Image 1">
+            <img src="photos/side4.jpeg" alt="Side Image 1">
+            <img src="photos/heart.jpeg" alt="Heart Image">
+            <img src="photos/side4.jpeg" alt="Heart Image">
+            <img src="photos/heart.jpeg" alt="Side Image 1">
+            <img src="photos/side4.jpeg" alt="Side Image 1">
+            <img src="photos/heart.jpeg" alt="Heart Image">
+            <img src="photos/side4.jpeg" alt="Side Image 1">
+            <img src="photos/heart.jpeg" alt="Heart Image">
+            <img src="photos/side4.jpeg" alt="Heart Image">
+            <img src="photos/heart.jpeg" alt="Side Image 1">
+            <img src="photos/side4.jpeg" alt="Side Image 1">
+            <img src="photos/heart.jpeg" alt="Heart Image">
+            <img src="photos/side4.jpeg" alt="Heart Image">
+            <img src="photos/heart.jpeg" alt="Side Image 1">
+            <!-- Add more side images as needed -->
+        </div>
+
+        <!-- Central welcome image -->
+        <div class="central-image">
+            <img src="photos/Welcome.jpg" alt="Welcome Image" id="playButton">
+            <div class="text-overlay" id="textOverlay">!!Welcome!!<br>Miss Rakshasi</div>
+            <h3 id="text-overlay1">Touch the heart!!</h3>
+            <!-- Hidden image to replace text when music plays -->
+            <img src="photos/welvaishu.jpg" alt="New Image" id="newImage">
+        </div>
+
+        <!-- Right side images (same as left) -->
+        <div class="side-images">
+            <img src="photos/side4.jpeg" alt="Side Image 1">
+            <img src="photos/heart.jpeg" alt="Heart Image">
+            <img src="photos/side4.jpeg" alt="Side Image 1">
+            <img src="photos/heart.jpeg" alt="Heart Image">
+            <img src="photos/side4.jpeg" alt="Heart Image">
+            <img src="photos/heart.jpeg" alt="Side Image 1">
+            <img src="photos/side4.jpeg" alt="Heart Image">
+            <img src="photos/heart.jpeg" alt="Side Image 1">
+            <img src="photos/side4.jpeg" alt="Side Image 1">
+            <img src="photos/heart.jpeg" alt="Heart Image">
+            <img src="photos/side4.jpeg" alt="Side Image 1">
+            <img src="photos/heart.jpeg" alt="Heart Image">
+            <img src="photos/side4.jpeg" alt="Side Image 1">
+            <img src="photos/heart.jpeg" alt="Heart Image">
+            <img src="photos/side4.jpeg" alt="Heart Image">
+            <img src="photos/heart.jpeg" alt="Side Image 1">
+            <img src="photos/side4.jpeg" alt="Side Image 1">
+            <img src="photos/heart.jpeg" alt="Heart Image">
+            <img src="photos/side4.jpeg" alt="Heart Image">
+            <img src="photos/heart.jpeg" alt="Side Image 1">
+            <img src="photos/side4.jpeg" alt="Side Image 1">
+            <img src="photos/heart.jpeg" alt="Heart Image">
+            <img src="photos/side4.jpeg" alt="Side Image 1">
+            <img src="photos/heart.jpeg" alt="Heart Image">
+            <img src="photos/side4.jpeg" alt="Heart Image">
+            <img src="photos/heart.jpeg" alt="Side Image 1">
+            <img src="photos/side4.jpeg" alt="Side Image 1">
+            <img src="photos/heart.jpeg" alt="Heart Image">
+            <img src="photos/side4.jpeg" alt="Heart Image">
+            <img src="photos/heart.jpeg" alt="Side Image 1">
+
+            <!-- Add more side images as needed -->
+        </div>
+    </div>
+
+    <!-- Music control buttons -->
+    <div class="music-controls">
+        <button id="nextButton" onclick="window.location.href='bdaywishes.html'">Next</button>
+    </div>
+
+    <!-- Include Howler.js via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+
+    <!-- Script to play background music -->
+    <script>
+        var sound = new Howl({
+            src: ['photos/chuttamalle_devara.mp3'],
+            autoplay: false,
+            loop: true,
+            volume: 1.0
+        });
+
+        document.getElementById('playButton').addEventListener('click', function () {
+            sound.play();
+            document.getElementById('textOverlay').style.display = 'none'; // Hide the welcome text
+            document.getElementById('newImage').style.display = 'block'; // Show the new image
+        });
+    </script>
+
+</body>
+
+</html>
